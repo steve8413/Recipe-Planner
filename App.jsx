@@ -166,7 +166,7 @@ export default function App() {
     // If API Key provided, attempt live Gemini call
     if (apiKey.trim()) {
       try {
-        const promptText = `
+                const promptText = `
           Generate 3 creative, delicious recipes using some or all of these available ingredients: ${availableIngredients}.
           CRITICAL DIET REQUIREMENT: The user strictly follows the ${selectedDiet.toUpperCase()} diet.
           ${selectedDiet === 'jain' ? 'REASON: Jain diet STRICTLY FORBIDS onion, garlic, potatoes, carrots, radish, ginger, beetroot, or any underground root vegetables, as well as meat/eggs.' : ''}
