@@ -166,7 +166,7 @@ export default function App() {
     // If API Key provided, attempt live Gemini call
     if (apiKey.trim()) {
       try {
-                const promptText = `
+        const promptText = `
           Generate 3 creative, delicious recipes using some or all of these available ingredients: ${availableIngredients}.
           CRITICAL DIET REQUIREMENT: The user strictly follows the ${selectedDiet.toUpperCase()} diet.
           ${selectedDiet === 'jain' ? 'REASON: Jain diet STRICTLY FORBIDS onion, garlic, potatoes, carrots, radish, ginger, beetroot, or any underground root vegetables, as well as meat/eggs.' : ''}
@@ -189,8 +189,8 @@ export default function App() {
           ]
         `;
 
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
-          method: 'POST',
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',    
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: promptText }] }],
